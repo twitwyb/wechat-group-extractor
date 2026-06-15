@@ -4,9 +4,14 @@
 """
 
 import os
+import sys
 
-# 输出目录
-OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
+# 输出目录 — EXE模式输出到exe同目录，源码模式输出到脚本目录
+if getattr(sys, 'frozen', False):
+    # PyInstaller打包后，__file__指向临时目录，用exe所在目录
+    OUTPUT_DIR = os.path.join(os.path.dirname(sys.executable), "output")
+else:
+    OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
 # UI自动化延迟配置（秒）
 UI_DELAY_SHORT = 0.5      # 短延迟，用于UI响应等待
