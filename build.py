@@ -23,15 +23,14 @@ def build():
         print("[错误] 未安装PyInstaller，请运行: pip install pyinstaller")
         return
 
-    # 获取rapidocr模型路径
+    # 获取rapidocr完整包路径（需要config.yaml、模型、子包）
     rapidocr_data = []
     try:
         import rapidocr_onnxruntime
         pkg_dir = os.path.dirname(rapidocr_onnxruntime.__file__)
-        models_dir = os.path.join(pkg_dir, "models")
-        if os.path.exists(models_dir):
-            rapidocr_data.append(f"{models_dir};rapidocr_onnxruntime/models")
-            print(f"[+] 找到OCR模型: {models_dir}")
+        # 打包整个 rapidocr_onnxruntime 目录
+        rapidocr_data.append(f"{pkg_dir};rapidocr_onnxruntime")
+        print(f"[+] 找到OCR包: {pkg_dir}")
     except ImportError:
         print("[警告] 未安装rapidocr-onnxruntime，OCR功能将不可用")
 
@@ -52,6 +51,9 @@ def build():
         "PIL",
         "pyperclip",
         "rapidocr_onnxruntime",
+        "rapidocr_onnxruntime.ch_ppocr_v2_cls",
+        "rapidocr_onnxruntime.ch_ppocr_v3_det",
+        "rapidocr_onnxruntime.ch_ppocr_v3_rec",
         "psutil",
         "uiautomation",
         "comtypes",

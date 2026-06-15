@@ -6,3 +6,6 @@ output/
 .venv/
 venv/
 injector.log
+build/
+dist/
+*.spec
