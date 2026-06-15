@@ -1,0 +1,6 @@
+wxauto>=2.0.0          # UI自动化（wxauto模式必需）
+openpyxl>=3.1.0        # Excel导出
+
+# 以下为可选依赖，按需安装:
+# wcferry              # WeChatFerry DLL注入模式
+# pywxdump             # PyWxDump 数据库解密模式 (CLI工具)

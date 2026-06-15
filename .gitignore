@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+output/
+*.xlsx
+*.csv
+.venv/
+venv/
+injector.log
