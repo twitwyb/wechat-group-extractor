@@ -18,6 +18,11 @@ SCROLL_TIMES = 5          # 每次滚动的滚轮格数
 SCROLL_WAIT = 0.8         # 滚动后等待时间（秒）
 MAX_SCROLL_COUNT = 200    # 最大滚动次数，防止无限循环
 
+# 微信4.x截图OCR配置
+OCR_SCROLL_COUNT = 50         # 最大滚动截图次数
+OCR_SCROLL_WAIT = 0.3         # 滚动后等待时间（秒）
+OCR_MIN_NAME_LEN = 2          # 昵称最小长度（过滤噪声）
+
 # 数据库相关
 WECHAT_DB_NAME = "MicroMsg.db"  # 微信联系人数据库名称
 

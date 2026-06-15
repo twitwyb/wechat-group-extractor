@@ -1,6 +1,12 @@
-wxauto>=2.0.0          # UI自动化（wxauto模式必需）
-openpyxl>=3.1.0        # Excel导出
+wxauto>=2.0.0               # UI自动化（微信3.9.x）
+openpyxl>=3.1.0              # Excel导出
+pyautogui>=0.9.54            # 截图（微信4.x）
+Pillow>=10.0.0               # 图像处理
+pyperclip>=1.8.0             # 剪贴板（中文输入）
+rapidocr-onnxruntime>=1.3.0  # OCR识别（微信4.x）
+psutil>=5.9.0                # wxauto依赖
 
 # 以下为可选依赖，按需安装:
-# wcferry              # WeChatFerry DLL注入模式
-# pywxdump             # PyWxDump 数据库解密模式 (CLI工具)
+# wcferry                   # WeChatFerry DLL注入模式
+# pywxdump                  # PyWxDump 数据库解密模式
+# pyinstaller               # 打包为EXE
